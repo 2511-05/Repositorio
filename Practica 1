@@ -1,1 +1,371 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f5f7;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ENCABEZADO
+   ========================= */
+
+.hero {
+    background: #111827;
+    color: white;
+    padding: 70px 20px 80px;
+}
+
+.hero-content {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid #6b7280;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 25px;
+    color: #d1d5db;
+    margin-bottom: 25px;
+}
+
+.meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+.status {
+    background: #f59e0b;
+    color: #111827;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+
+/* =========================
+   CONTENEDOR
+   ========================= */
+
+.container {
+    max-width: 1000px;
+    margin: -35px auto 60px;
+    padding: 0 20px;
+}
+
+
+/* =========================
+   TARJETAS
+   ========================= */
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 22px;
+    color: #111827;
+}
+
+.card h3 {
+    margin: 25px 0 12px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   OBJETIVOS
+   ========================= */
+
+.checklist {
+    list-style: none;
+}
+
+.checklist li {
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #f9fafb;
+}
+
+.checklist span {
+    display: inline-block;
+    width: 25px;
+    font-weight: bold;
+}
+
+.completed {
+    color: #166534;
+}
+
+.failed {
+    color: #374151;
+}
+
+.failed strong {
+    margin-left: 5px;
+}
+
+.failed em {
+    display: block;
+    margin-left: 25px;
+    color: #dc2626;
+    font-size: 14px;
+}
+
+
+/* =========================
+   MATERIALES
+   ========================= */
+
+.materials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.material {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    background: #f9fafb;
+    border-radius: 10px;
+}
+
+.material-icon {
+    font-size: 25px;
+}
+
+.material strong {
+    display: block;
+    font-size: 15px;
+}
+
+.material small {
+    color: #6b7280;
+}
+
+
+/* =========================
+   IMAGEN
+   ========================= */
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.image-container p {
+    margin-top: 10px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* =========================
+   TABLA
+   ========================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background: #f3f4f6;
+    font-size: 14px;
+}
+
+td {
+    font-size: 15px;
+}
+
+
+/* =========================
+   FALLAS
+   ========================= */
+
+.failure-card {
+    border-left: 5px solid #ef4444;
+}
+
+.failure {
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.failure:last-of-type {
+    border-bottom: none;
+}
+
+.failure h3 {
+    color: #b91c1c;
+    margin: 0 0 5px;
+}
+
+.failure p {
+    color: #4b5563;
+}
+
+.solution {
+    margin-top: 20px;
+    padding: 18px;
+    background: #ecfdf5;
+    border-radius: 10px;
+    border-left: 4px solid #10b981;
+}
+
+.solution h3 {
+    color: #047857;
+    margin: 0 0 5px;
+}
+
+.solution p {
+    color: #374151;
+}
+
+
+/* =========================
+   APRENDIZAJES
+   ========================= */
+
+.learning {
+    font-size: 17px;
+    color: #4b5563;
+}
+
+
+/* =========================
+   SIGUIENTE PASO
+   ========================= */
+
+.next-step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    margin-bottom: 30px;
+    background: #111827;
+    color: white;
+    border-radius: 14px;
+}
+
+.next-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #9ca3af;
+}
+
+.next-step h2 {
+    margin: 5px 0;
+    font-size: 23px;
+}
+
+.next-step p {
+    color: #d1d5db;
+}
+
+.arrow {
+    font-size: 45px;
+}
+
+
+/* =========================
+   PIE DE PÁGINA
+   ========================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 50px 20px 65px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .materials {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .next-step {
+        padding: 22px;
+    }
+
+    .arrow {
+        font-size: 30px;
+    }
+}
