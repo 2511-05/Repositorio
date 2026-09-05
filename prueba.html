@@ -1,6 +1,504 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sesión 01 — Control de motor paso a paso</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* ENCABEZADO */
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #334155;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .status {
+            background: #f59e0b;
+            color: #111827;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        /* CONTENIDO */
+        main {
+            max-width: 1000px;
+            margin: -30px auto 50px;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* OBJETIVOS */
+        .objetivos {
+            list-style: none;
+        }
+
+        .objetivos li {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .completado {
+            color: #15803d;
+        }
+
+        .fallido {
+            color: #b91c1c;
+        }
+
+        /* MATERIALES */
+        .materiales {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .material {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .material strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .material small {
+            color: #64748b;
+        }
+
+        /* IMAGEN */
+        .imagen {
+            text-align: center;
+        }
+
+        .imagen img {
+            max-width: 100%;
+            max-height: 550px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .caption {
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* TABLA */
+        .tabla-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #e2e8f0;
+        }
+
+        /* FALLAS */
+        .fallas {
+            border-left: 5px solid #ef4444;
+        }
+
+        .problema {
+            margin-bottom: 20px;
+        }
+
+        .problema h3 {
+            color: #b91c1c;
+            margin-top: 0;
+        }
+
+        .solucion {
+            background: #ecfdf5;
+            padding: 18px;
+            border-left: 4px solid #10b981;
+            border-radius: 8px;
+        }
+
+        .solucion h3 {
+            color: #047857;
+            margin-top: 0;
+        }
+
+        /* APRENDIZAJES */
+        .aprendizaje {
+            font-size: 17px;
+            color: #475569;
+        }
+
+        /* SIGUIENTE PASO */
+        .siguiente {
+            background: #0f172a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .siguiente h2 {
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .siguiente p {
+            color: #cbd5e1;
+        }
+
+        .flecha {
+            font-size: 45px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* CELULAR */
+        @media (max-width: 700px) {
+
+            header {
+                padding: 45px 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .materiales {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 22px;
+            }
+
+            .siguiente {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .flecha {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
 <body>
-  <h1>FUNCIONA</h1>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="header-content">
+
+            <span class="tag">ROBÓTICA A</span>
+
+            <h1>Sesión 01</h1>
+
+            <p class="subtitle">
+                Control de motor paso a paso
+            </p>
+
+            <div class="info">
+                <span>📅 04/09/2026</span>
+                <span>👤 Carlos Pérez</span>
+                <span class="status">BORRADOR</span>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- OBJETIVOS -->
+        <section>
+
+            <h2>🎯 Objetivos</h2>
+
+            <ul class="objetivos">
+
+                <li class="completado">
+                    ✓ Configurar el entorno de desarrollo en Arduino IDE 2.x
+                </li>
+
+                <li class="fallido">
+                    ○ Lograr la rotación precisa a 90 grados ❌
+                    <br>
+                    <small>
+                        Falló la calibración del driver.
+                    </small>
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- MATERIALES -->
+        <section>
+
+            <h2>🧰 Materiales</h2>
+
+            <div class="materiales">
+
+                <div class="material">
+                    <strong>⚡ ESP32 DevKit V1</strong>
+                    <small>Microcontrolador</small>
+                </div>
+
+                <div class="material">
+                    <strong>🔌 TB6612FNG</strong>
+                    <small>Controlador — $85 MXN</small>
+                </div>
+
+                <div class="material">
+                    <strong>💻 Arduino IDE 2.3.2</strong>
+                    <small>Entorno de desarrollo</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESARROLLO -->
+        <section>
+
+            <h2>🔧 Desarrollo</h2>
+
+            <div class="imagen">
+
+                <img
+                    src="img/sesion1_1.jpg"
+                    alt="Conexión física del ESP32 con el controlador TB6612"
+                >
+
+                <p class="caption">
+                    Conexión física del ESP32 con el controlador TB6612
+                </p>
+
+            </div>
+
+
+            <h3>Mediciones</h3>
+
+            <div class="tabla-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Magnitud</th>
+                            <th>Teórico</th>
+                            <th>Medido</th>
+                            <th>% Error</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Voltaje de entrada</td>
+                            <td>5.00 V</td>
+                            <td>4.88 V</td>
+                            <td>2.40%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Corriente pico</td>
+                            <td>300 mA</td>
+                            <td>340 mA</td>
+                            <td>13.33%</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- FALLAS -->
+        <section class="fallas">
+
+            <h2>⚠️ Fallas</h2>
+
+            <div class="problema">
+
+                <h3>Síntoma</h3>
+
+                <p>
+                    El motor no gira y genera un zumbido constante.
+                </p>
+
+            </div>
+
+
+            <div class="problema">
+
+                <h3>Cómo lo encontré</h3>
+
+                <p>
+                    Al ejecutar el script básico de prueba y verificar
+                    el consumo en la fuente.
+                </p>
+
+            </div>
+
+
+            <div class="solucion">
+
+                <h3>💡 Solución</h3>
+
+                <p>
+                    Se identificó que los pines A1 y A2 estaban invertidos
+                    en el cableado del protoboard.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- APRENDIZAJES -->
+        <section>
+
+            <h2>🧠 Aprendizajes</h2>
+
+            <p class="aprendizaje">
+
+                Comprendí cómo influye la frecuencia de PWM en la respuesta
+                del puente H y la importancia de verificar la referencia de
+                tierra compartida entre la fuente externa y la tarjeta ESP32
+                antes de alimentar el circuito.
+
+            </p>
+
+        </section>
+
+
+        <!-- SIGUIENTE PASO -->
+        <section class="siguiente">
+
+            <div>
+
+                <h2>⚙️ Siguiente paso</h2>
+
+                <p>
+                    Ajustar la secuencia de pasos en el código para corregir
+                    el ángulo de giro antes del martes.
+                </p>
+
+            </div>
+
+            <div class="flecha">
+                →
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        Bitácora de Robótica A · Sesión 01 · 2026
+
+    </footer>
+
 </body>
 </html>
