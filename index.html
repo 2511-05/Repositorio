@@ -1,6 +1,7 @@
-
+```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,11 @@
     <title>Práctica 1 — Temporizador 555</title>
 
     <style>
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================= */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -21,7 +27,11 @@
             line-height: 1.6;
         }
 
-        /* ENCABEZADO */
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
         header {
             background: #0f172a;
             color: white;
@@ -72,7 +82,11 @@
             font-size: 11px;
         }
 
-        /* CONTENIDO */
+
+        /* =========================
+           CONTENIDO PRINCIPAL
+        ========================= */
+
         main {
             max-width: 1000px;
             margin: -30px auto 50px;
@@ -90,43 +104,46 @@
         h2 {
             margin-bottom: 20px;
             color: #0f172a;
+            font-size: 25px;
         }
 
         h3 {
             margin-top: 20px;
             margin-bottom: 10px;
+            color: #334155;
         }
 
-        /* OBJETIVOS */
-        .objetivos {
-            list-style: none;
-        }
-
-        .objetivos li {
-            padding: 12px;
+        p {
             margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           OBJETIVO
+        ========================= */
+
+        .objetivo {
             background: #f8fafc;
+            border-left: 5px solid #3b82f6;
+            padding: 20px;
             border-radius: 8px;
+            font-size: 17px;
         }
 
-        .completado {
-            color: #15803d;
-        }
 
-        .fallido {
-            color: #b91c1c;
-        }
+        /* =========================
+           MATERIALES
+        ========================= */
 
-        /* MATERIALES */
         .materiales {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
 
         .material {
             background: #f8fafc;
-            padding: 20px;
+            padding: 18px;
             border-radius: 10px;
             border: 1px solid #e2e8f0;
         }
@@ -134,107 +151,189 @@
         .material strong {
             display: block;
             margin-bottom: 5px;
+            color: #0f172a;
         }
 
         .material small {
             color: #64748b;
         }
 
-        /* IMAGEN */
-        .imagen {
+
+        /* =========================
+           DESARROLLO
+        ========================= */
+
+        .paso {
+            margin-bottom: 35px;
+        }
+
+        .paso:last-child {
+            margin-bottom: 0;
+        }
+
+        .paso-numero {
+            display: inline-block;
+            background: #0f172a;
+            color: white;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .paso h3 {
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================
+           ESPACIOS PARA IMÁGENES
+        ========================= */
+
+        .espacio-imagen {
+            width: 100%;
+            min-height: 300px;
+            border: 2px dashed #94a3b8;
+            border-radius: 12px;
+            background: #f8fafc;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .espacio-imagen span {
+            color: #64748b;
+            font-size: 16px;
             text-align: center;
         }
 
-        .imagen img {
-            max-width: 100%;
+        .espacio-imagen img {
+            width: 100%;
             max-height: 550px;
+            object-fit: contain;
             border-radius: 10px;
-            border: 1px solid #e2e8f0;
         }
 
         .caption {
+            text-align: center;
             color: #64748b;
             font-size: 14px;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
-        /* TABLA */
+
+        /* =========================
+           TABLA DE MEDICIONES
+        ========================= */
+
         .tabla-container {
             overflow-x: auto;
+            margin-top: 20px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
+            min-width: 650px;
         }
 
         th,
         td {
             padding: 14px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
+            text-align: center;
+            border: 1px solid #cbd5e1;
         }
 
         th {
             background: #e2e8f0;
+            color: #0f172a;
+            font-weight: bold;
         }
 
-        /* FALLAS */
+        td {
+            height: 50px;
+            background: #ffffff;
+        }
+
+        .nota-tabla {
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           FALLAS
+        ========================= */
+
         .fallas {
             border-left: 5px solid #ef4444;
         }
 
-        .problema {
-            margin-bottom: 20px;
+        .espacio-texto {
+            min-height: 180px;
+            border: 2px dashed #cbd5e1;
+            border-radius: 10px;
+            background: #f8fafc;
+            padding: 20px;
+            color: #94a3b8;
         }
 
-        .problema h3 {
-            color: #b91c1c;
-            margin-top: 0;
+
+        /* =========================
+           APRENDIZAJES
+        ========================= */
+
+        .aprendizajes {
+            border-left: 5px solid #10b981;
         }
 
-        .solucion {
-            background: #ecfdf5;
-            padding: 18px;
-            border-left: 4px solid #10b981;
-            border-radius: 8px;
-        }
 
-        .solucion h3 {
-            color: #047857;
-            margin-top: 0;
-        }
+        /* =========================
+           VIDEO
+        ========================= */
 
-        /* APRENDIZAJES */
-        .aprendizaje {
-            font-size: 17px;
-            color: #475569;
-        }
+        .video-container {
+            width: 100%;
+            min-height: 400px;
+            border: 2px dashed #94a3b8;
+            border-radius: 12px;
+            background: #f8fafc;
 
-        /* SIGUIENTE PASO */
-        .siguiente {
-            background: #0f172a;
-            color: white;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+
+            overflow: hidden;
         }
 
-        .siguiente h2 {
-            color: white;
-            margin-bottom: 5px;
+        .video-container span {
+            color: #64748b;
+            text-align: center;
+            padding: 20px;
         }
 
-        .siguiente p {
-            color: #cbd5e1;
+        video {
+            width: 100%;
+            max-height: 600px;
+            border-radius: 10px;
         }
 
-        .flecha {
-            font-size: 45px;
-        }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             text-align: center;
             padding: 30px;
@@ -242,7 +341,11 @@
             font-size: 13px;
         }
 
-        /* CELULAR */
+
+        /* =========================
+           CELULAR
+        ========================= */
+
         @media (max-width: 700px) {
 
             header {
@@ -265,243 +368,622 @@
                 padding: 22px;
             }
 
-            .siguiente {
-                flex-direction: column;
-                align-items: flex-start;
+            .espacio-imagen {
+                min-height: 220px;
             }
 
-            .flecha {
-                display: none;
+            .video-container {
+                min-height: 250px;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- ENCABEZADO -->
+
+    <!-- =========================
+         ENCABEZADO
+    ========================= -->
+
     <header>
+
         <div class="header-content">
 
-            <span class="tag">INTRODUCCIÓN A LA MECATRÓNICA</span>
+            <span class="tag">
+                INTRODUCCIÓN A LA MECATRÓNICA
+            </span>
 
-            <h1>Práctica 1</h1>
+            <h1>
+                Práctica 1
+            </h1>
 
             <p class="subtitle">
                 Temporizador 555
             </p>
 
             <div class="info">
-                <span>28/08/2026</span>
-                <span>Diana Arellano Mendoza</span>
-                <span class="status">REPORTE</span>
+
+                <span>
+                    📅 28/08/2026
+                </span>
+
+                <span>
+                    👤 Diana Arellano Mendoza
+                </span>
+
+                <span class="status">
+                    REPORTE
+                </span>
+
             </div>
 
         </div>
+
     </header>
+
 
 
     <main>
 
-        <!-- OBJETIVOS -->
+
+        <!-- =========================
+             OBJETIVO
+        ========================= -->
+
         <section>
 
-            <h2>🎯 Objetivos</h2>
+            <h2>
+                🎯 Objetivo
+            </h2>
 
-            <ul class="objetivos">
+            <div class="objetivo">
 
-                <li class="completado">
-                    ✓ Configurar el entorno de desarrollo en Arduino IDE 2.x
-                </li>
+                Construir un oscilador que haga parpadear un LED,
+                calcular su frecuencia y duty teóricos, medirlos
+                y comparar.
 
-                <li class="fallido">
-                    ○ Lograr la rotación precisa a 90 grados ❌
-                    <br>
-                    <small>
-                        Falló la calibración del driver.
-                    </small>
-                </li>
-
-            </ul>
+            </div>
 
         </section>
 
 
-        <!-- MATERIALES -->
+
+        <!-- =========================
+             MATERIALES
+        ========================= -->
+
         <section>
 
-            <h2>🧰 Materiales</h2>
+            <h2>
+                🧰 Materiales
+            </h2>
 
             <div class="materiales">
 
-                <div class="material">
-                    <strong>⚡ ESP32 DevKit V1</strong>
-                    <small>Microcontrolador</small>
-                </div>
 
                 <div class="material">
-                    <strong>🔌 TB6612FNG</strong>
-                    <small>Controlador — $85 MXN</small>
+
+                    <strong>
+                        🔲 1× NE555 (DIP-8)
+                    </strong>
+
+                    <small>
+                        Circuito integrado temporizador.
+                    </small>
+
                 </div>
 
+
                 <div class="material">
-                    <strong>💻 Arduino IDE 2.3.2</strong>
-                    <small>Entorno de desarrollo</small>
+
+                    <strong>
+                        💡 1× LED
+                    </strong>
+
+                    <small>
+                        Indicador visual del oscilador.
+                    </small>
+
                 </div>
+
+
+                <div class="material">
+
+                    <strong>
+                        🔩 1× Resistor para LED
+                    </strong>
+
+                    <small>
+                        330 Ω o 470 Ω.
+                    </small>
+
+                </div>
+
+
+                <div class="material">
+
+                    <strong>
+                        🔩 2× Resistores temporizadores
+                    </strong>
+
+                    <small>
+                        RA = 1 kΩ<br>
+                        RB = 10 kΩ
+                    </small>
+
+                </div>
+
+
+                <div class="material">
+
+                    <strong>
+                        ⚡ 1× Capacitor de temporización
+                    </strong>
+
+                    <small>
+                        C = 100 µF (electrolítico)
+                    </small>
+
+                </div>
+
+
+                <div class="material">
+
+                    <strong>
+                        🔋 1× Capacitor adicional
+                    </strong>
+
+                    <small>
+                        C = 100 nF (cerámico)
+                    </small>
+
+                </div>
+
+
+                <div class="material">
+
+                    <strong>
+                        🔋 1× Capacitor de 10 nF
+                    </strong>
+
+                    <small>
+                        Para pin 5 (CTRL) → estabilidad.
+                    </small>
+
+                </div>
+
+
+                <div class="material">
+
+                    <strong>
+                        🔌 Protoboard, cables y fuente
+                    </strong>
+
+                    <small>
+                        Fuente de alimentación de 5 V regulada.
+                    </small>
+
+                </div>
+
 
             </div>
 
         </section>
 
 
-        <!-- DESARROLLO -->
+
+        <!-- =========================
+             DESARROLLO
+        ========================= -->
+
         <section>
 
-            <h2>🔧 Desarrollo</h2>
+            <h2>
+                🔧 Desarrollo
+            </h2>
 
-            <div class="imagen">
 
-                <img
-                    src="img/sesion1_1.jpg"
-                    alt="Conexión física del ESP32 con el controlador TB6612"
-                >
+            <!-- PASO 1 -->
+
+            <div class="paso">
+
+                <h3>
+
+                    <span class="paso-numero">
+                        1
+                    </span>
+
+                    Diseño y simulación en Tinkercad
+
+                </h3>
+
+                <p>
+
+                    Al inicio de la práctica realizamos el diseño
+                    del circuito utilizando Tinkercad. En esta etapa
+                    colocamos el temporizador NE555, los resistores,
+                    los capacitores y el LED de acuerdo con la
+                    configuración necesaria para construir el
+                    oscilador.
+
+                </p>
+
+                <p>
+
+                    Una vez terminado el diseño, realizamos una
+                    prueba en Tinkercad para comprobar que el circuito
+                    funcionara correctamente y que el LED pudiera
+                    parpadear como se esperaba.
+
+                </p>
+
+
+                <!-- ESPACIO PARA IMAGEN 1 -->
+
+                <div class="espacio-imagen">
+
+                    <span>
+                        📷 ESPACIO PARA IMAGEN<br>
+                        Diseño y simulación del circuito en Tinkercad
+                    </span>
+
+                </div>
 
                 <p class="caption">
-                    Conexión física del ESP32 con el controlador TB6612
+                    Diseño del circuito y prueba realizada en Tinkercad.
                 </p>
 
             </div>
 
 
-            <h3>Mediciones</h3>
 
-            <div class="tabla-container">
+            <!-- PASO 2 -->
 
-                <table>
+            <div class="paso">
 
-                    <thead>
-                        <tr>
-                            <th>Magnitud</th>
-                            <th>Teórico</th>
-                            <th>Medido</th>
-                            <th>% Error</th>
-                        </tr>
-                    </thead>
+                <h3>
 
-                    <tbody>
+                    <span class="paso-numero">
+                        2
+                    </span>
 
-                        <tr>
-                            <td>Voltaje de entrada</td>
-                            <td>5.00 V</td>
-                            <td>4.88 V</td>
-                            <td>2.40%</td>
-                        </tr>
+                    Montaje del circuito en protoboard
 
-                        <tr>
-                            <td>Corriente pico</td>
-                            <td>300 mA</td>
-                            <td>340 mA</td>
-                            <td>13.33%</td>
-                        </tr>
+                </h3>
 
-                    </tbody>
+                <p>
 
-                </table>
+                    Después de comprobar que el diseño funcionaba
+                    correctamente en Tinkercad, pasamos el circuito
+                    a una protoboard.
+
+                </p>
+
+                <p>
+
+                    Realizamos las conexiones del NE555, los resistores,
+                    capacitores y el LED siguiendo el diseño que
+                    habíamos realizado previamente. Posteriormente
+                    conectamos la fuente de 5 V regulada y comprobamos
+                    que el LED parpadeara correctamente.
+
+                </p>
+
+                <p>
+
+                    De esta manera verificamos físicamente que el
+                    circuito construido en la protoboard funcionara
+                    de acuerdo con la simulación.
+
+                </p>
+
+
+                <!-- ESPACIO PARA IMAGEN 2 -->
+
+                <div class="espacio-imagen">
+
+                    <span>
+                        📷 ESPACIO PARA IMAGEN<br>
+                        Circuito armado y funcionando en protoboard
+                    </span>
+
+                </div>
+
+                <p class="caption">
+                    Montaje físico del circuito en protoboard.
+                </p>
 
             </div>
+
+
+
+            <!-- PASO 3 -->
+
+            <div class="paso">
+
+                <h3>
+
+                    <span class="paso-numero">
+                        3
+                    </span>
+
+                    Mediciones con el osciloscopio
+
+                </h3>
+
+                <p>
+
+                    Finalmente utilizamos el osciloscopio para realizar
+                    las mediciones del circuito. Medimos la magnitud
+                    del VCC, el voltaje de salida en estado ALTO,
+                    la frecuencia, el duty cycle y la corriente del LED.
+
+                </p>
+
+                <p>
+
+                    Con los valores obtenidos experimentalmente
+                    pudimos comparar las mediciones con los valores
+                    teóricos calculados previamente.
+
+                </p>
+
+                <p>
+
+                    Las diferencias entre los valores teóricos y los
+                    valores medidos pueden explicarse por factores
+                    propios de los componentes reales y del montaje,
+                    como las tolerancias de los resistores y
+                    capacitores, las características del NE555,
+                    las condiciones de alimentación y las condiciones
+                    reales del circuito.
+
+                </p>
+
+
+                <h3>
+                    📊 Tabla de mediciones
+                </h3>
+
+
+                <div class="tabla-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Magnitud
+                                </th>
+
+                                <th>
+                                    Teórico
+                                </th>
+
+                                <th>
+                                    Medido
+                                </th>
+
+                                <th>
+                                    Diferencia
+                                </th>
+
+                                <th>
+                                    % Error
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    VCC
+                                </td>
+
+                                <td></td>
+
+                                <td></td>
+
+                                <td></td>
+
+                                <td></td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    V de salida en ALTO
+                                </td>
+
+                                <td></td>
+
+                                <td></td>
+
+                                <td></td>
+
+                                <td></td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Frecuencia
+                                </td>
+
+                                <td></td>
+
+                                <td></td>
+
+                                <td></td>
+
+                                <td></td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Duty Cycle
+                                </td>
+
+                                <td></td>
+
+                                <td></td>
+
+                                <td></td>
+
+                                <td></td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Corriente del LED
+                                </td>
+
+                                <td></td>
+
+                                <td></td>
+
+                                <td></td>
+
+                                <td></td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <p class="nota-tabla">
+
+                    * Completar con los valores calculados y medidos
+                    durante la práctica.
+
+                </p>
+
+            </div>
+
 
         </section>
 
 
-        <!-- FALLAS -->
+
+        <!-- =========================
+             FALLAS
+        ========================= -->
+
         <section class="fallas">
 
-            <h2>⚠️ Fallas</h2>
+            <h2>
+                ⚠️ Fallas
+            </h2>
 
-            <div class="problema">
+            <div class="espacio-texto">
 
-                <h3>Síntoma</h3>
-
-                <p>
-                    El motor no gira y genera un zumbido constante.
-                </p>
-
-            </div>
-
-
-            <div class="problema">
-
-                <h3>Cómo lo encontré</h3>
-
-                <p>
-                    Al ejecutar el script básico de prueba y verificar
-                    el consumo en la fuente.
-                </p>
-
-            </div>
-
-
-            <div class="solucion">
-
-                <h3>💡 Solución</h3>
-
-                <p>
-                    Se identificó que los pines A1 y A2 estaban invertidos
-                    en el cableado del protoboard.
-                </p>
+                ✏️ Escribe aquí las fallas encontradas durante
+                la realización de la práctica.
 
             </div>
 
         </section>
 
 
-        <!-- APRENDIZAJES -->
+
+        <!-- =========================
+             APRENDIZAJES
+        ========================= -->
+
+        <section class="aprendizajes">
+
+            <h2>
+                🧠 Aprendizajes
+            </h2>
+
+            <div class="espacio-texto">
+
+                ✏️ Escribe aquí los aprendizajes obtenidos
+                durante la práctica.
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             VIDEO
+        ========================= -->
+
         <section>
 
-            <h2>🧠 Aprendizajes</h2>
+            <h2>
+                🎥 Video de la práctica
+            </h2>
 
-            <p class="aprendizaje">
+            <p>
 
-                Comprendí cómo influye la frecuencia de PWM en la respuesta
-                del puente H y la importancia de verificar la referencia de
-                tierra compartida entre la fuente externa y la tarjeta ESP32
-                antes de alimentar el circuito.
+                En este espacio puedes colocar un video mostrando
+                el funcionamiento del circuito.
 
             </p>
 
-        </section>
 
+            <div class="video-container">
 
-        <!-- SIGUIENTE PASO -->
-        <section class="siguiente">
-
-            <div>
-
-                <h2>⚙️ Siguiente paso</h2>
-
-                <p>
-                    Ajustar la secuencia de pasos en el código para corregir
-                    el ángulo de giro antes del martes.
-                </p>
+                <span>
+                    🎬 ESPACIO PARA VIDEO<br><br>
+                    Coloca aquí tu video de la práctica.
+                </span>
 
             </div>
 
-            <div class="flecha">
-                →
-            </div>
-
         </section>
+
 
     </main>
 
 
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================= -->
+
     <footer>
 
-        Bitácora de Robótica A · Sesión 01 · 2026
+        <p>
+            Bitácora de Introducción a la Mecatrónica
+            · Práctica 1 · Temporizador 555
+        </p>
 
     </footer>
 
+
 </body>
+
 </html>
 ```
+
 
