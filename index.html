@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Práctica 1 — Temporizador 555</title>
+    <title>Práctica 3 — Actuadores</title>
 
     <style>
-
         /* =========================
            CONFIGURACIÓN GENERAL
         ========================= */
@@ -26,7 +24,6 @@
             color: #1e293b;
             line-height: 1.6;
         }
-
 
         /* =========================
            ENCABEZADO
@@ -82,7 +79,6 @@
             font-size: 11px;
         }
 
-
         /* =========================
            CONTENIDO PRINCIPAL
         ========================= */
@@ -91,6 +87,27 @@
             max-width: 1000px;
             margin: -30px auto 50px;
             padding: 0 20px;
+        }
+
+        /* SECCIÓN DEL OBJETIVO PRINCIPAL / SEPARADORES */
+        .bloque-objetivo {
+            border: 2px solid #cbd5e1;
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 50px;
+            background-color: #f8fafc;
+        }
+
+        .titulo-bloque {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 26px;
+            margin-bottom: 25px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         section {
@@ -117,7 +134,6 @@
             margin-bottom: 10px;
         }
 
-
         /* =========================
            OBJETIVO
         ========================= */
@@ -129,7 +145,6 @@
             border-radius: 8px;
             font-size: 17px;
         }
-
 
         /* =========================
            MATERIALES
@@ -157,7 +172,6 @@
         .material small {
             color: #64748b;
         }
-
 
         /* =========================
            DESARROLLO
@@ -190,7 +204,6 @@
             margin-top: 0;
             margin-bottom: 12px;
         }
-
 
         /* =========================
            ESPACIOS PARA IMÁGENES
@@ -231,7 +244,6 @@
             margin-top: 8px;
         }
 
-
         /* =========================
            TABLA DE MEDICIONES
         ========================= */
@@ -271,7 +283,6 @@
             margin-top: 10px;
         }
 
-
         /* =========================
            FALLAS
         ========================= */
@@ -289,7 +300,6 @@
             color: #94a3b8;
         }
 
-
         /* =========================
            APRENDIZAJES
         ========================= */
@@ -297,7 +307,6 @@
         .aprendizajes {
             border-left: 5px solid #10b981;
         }
-
 
         /* =========================
            VIDEO
@@ -329,7 +338,6 @@
             border-radius: 10px;
         }
 
-
         /* =========================
            FOOTER
         ========================= */
@@ -340,7 +348,6 @@
             color: #64748b;
             font-size: 13px;
         }
-
 
         /* =========================
            CELULAR
@@ -376,595 +383,313 @@
                 min-height: 250px;
             }
         }
-
     </style>
 
 </head>
 
-
 <body>
-
 
     <!-- =========================
          ENCABEZADO
     ========================= -->
 
     <header>
-
         <div class="header-content">
-
             <span class="tag">
                 INTRODUCCIÓN A LA MECATRÓNICA
             </span>
 
             <h1>
-                Práctica 1
+                Práctica 3
             </h1>
 
             <p class="subtitle">
-                Temporizador 555
+                Actuadores
             </p>
 
             <div class="info">
-
                 <span>
-                     28/08/2026
+                    11/09/2026
                 </span>
 
                 <span>
-                     Diana Arellano Mendoza
+                    Diana Arellano Mendoza, Andrea Vera Fuentes
                 </span>
 
                 <span class="status">
                     REPORTE
                 </span>
-
             </div>
-
         </div>
-
     </header>
-
 
 
     <main>
 
+        <!-- =========================================================
+             BLOQUE 1: OBJETIVO 1
+        ========================================================= -->
+        <div class="bloque-objetivo">
+            <h2 class="titulo-bloque">Objetivo 1</h2>
 
-        <!-- =========================
-             OBJETIVO
-        ========================= -->
+            <!-- OBJETIVO 1 -->
+            <section>
+                <h2>Objetivo</h2>
+                <div class="objetivo">
+                    Construir un motor DC que logre girar en ambos sentidos
+                    controlado por in1/in2.
+                </div>
+            </section>
 
-        <section>
+            <!-- MATERIALES 1 -->
+            <section>
+                <h2>Materiales</h2>
+                <div class="materiales">
+                    <div class="material">
+                        <strong>- 1× ESP32 DevKit V1</strong>
+                    </div>
+                    <div class="material">
+                        <strong>- 1× Driver TB6612 (Puente H)</strong>
+                    </div>
+                    <div class="material">
+                        <strong>- 1-2× Motor DC TT con caja reductora</strong>
+                    </div>
+                    <div class="material">
+                        <strong>- Fuente de alimentación</strong>
+                    </div>
+                </div>
+            </section>
 
-            <h2>
-                 Objetivo
-            </h2>
+            <!-- DESARROLLO 1 -->
+            <section>
+                <h2>Desarrollo</h2>
 
-            <div class="objetivo">
-
-                Construir un oscilador que haga parpadear un LED,
-                calcular su frecuencia y duty teóricos, medirlos
-                y comparar.
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             MATERIALES
-        ========================= -->
-
-        <section>
-
-            <h2>
-                 Materiales
-            </h2>
-
-            <div class="materiales">
-
-
-                <div class="material">
-
-                    <strong>
-                        - 1× NE555 (DIP-8)
-                    </strong>
-
-                    <small>
-                        Circuito integrado temporizador.
-                    </small>
-
+                <div class="paso">
+                    <h3>
+                        <span class="paso-numero">1</span>
+                        Diseño y simulación en Tinkercad
+                    </h3>
+                    <p>Diseño y prueba del circuito en Tinkercad para verificar el cambio de giro del motor DC.</p>
+                    <div class="espacio-imagen">
+                        <span>ESPACIO PARA IMAGEN<br>Simulación Objetivo 1</span>
+                    </div>
+                    <p class="caption">Diseño y simulación del circuito para Objetivo 1.</p>
                 </div>
 
+                <div class="paso">
+                    <h3>
+                        <span class="paso-numero">2</span>
+                        Mediciones
+                    </h3>
+                    <p>Medición de voltajes y corrientes del motor en ambos sentidos.</p>
+                </div>
+            </section>
 
-                <div class="material">
+            <!-- FALLAS 1 -->
+            <section class="fallas">
+                <h2>Fallas</h2>
+                <div class="espacio-texto">
+                    Escribe aquí las fallas encontradas durante la realización del Objetivo 1.
+                </div>
+            </section>
 
-                    <strong>
-                        - 1× LED
-                    </strong>
+            <!-- APRENDIZAJES 1 -->
+            <section class="aprendizajes">
+                <h2>Aprendizajes</h2>
+                <div class="espacio-texto">
+                    Escribe aquí los aprendizajes obtenidos en el Objetivo 1.
+                </div>
+            </section>
 
-                    <small>
-                        Indicador visual del oscilador.
-                    </small>
+            <!-- VIDEO 1 -->
+            <section>
+                <h2>Video del Objetivo 1</h2>
+                <div class="video-container">
+                    <span>ESPACIO PARA VIDEO<br>Video de funcionamiento Objetivo 1</span>
+                </div>
+            </section>
+        </div>
 
+
+        <!-- =========================================================
+             BLOQUE 2: OBJETIVO 2
+        ========================================================= -->
+        <div class="bloque-objetivo">
+            <h2 class="titulo-bloque">Objetivo 2</h2>
+
+            <!-- OBJETIVO 2 -->
+            <section>
+                <h2>Objetivo</h2>
+                <div class="objetivo">
+                    Construir un control de velocidad por PWM a el motor DC
+                    y lograr que tenga mínimo 3 velocidades distintas.
+                </div>
+                
+            <!-- DESARROLLO 2 -->
+            <section>
+                <h2>Desarrollo</h2>
+
+                <div class="paso">
+                    <h3>
+                        <span class="paso-numero">1</span>
+                        Diseño y simulación en Tinkercad
+                    </h3>
+                    <p>Realizamos cambios principalmente en el codigo ya que 
+                        los componentes que utilizamos para la segunda parte de
+                        la practica eran los mismos que en el objetivo 1.</p>
+                    <div class="espacio-imagen">
+                        <span>ESPACIO PARA IMAGEN<br>Simulación Objetivo 2</span>
+                    </div>
+                    <p class="caption">Diseño del circuito en Tinkercad.</p>
                 </div>
 
+                <div class="paso">
+                    <h3>
+                        <span class="paso-numero">2</span>
+                        Mediciones
+                    </h3>
+                    <p>Resultados y comparación de mediciones para el Objetivo 2.</p>
+                </div>
+            </section>
 
-                <div class="material">
+            <!-- FALLAS 2 -->
+            <section class="fallas">
+                <h2>Fallas</h2>
+                <div class="espacio-texto">
+                    Escribe aquí las fallas encontradas durante la realización del Objetivo 2.
+                </div>
+            </section>
 
-                    <strong>
-                        - 1× Resistor para LED
-                    </strong>
+            <!-- APRENDIZAJES 2 -->
+            <section class="aprendizajes">
+                <h2>Aprendizajes</h2>
+                <div class="espacio-texto">
+                    Escribe aquí los aprendizajes obtenidos en el Objetivo 2.
+                </div>
+            </section>
 
-                    <small>
-                        330 Ω o 470 Ω.
-                    </small>
+            <!-- VIDEO 2 -->
+            <section>
+                <h2>Video del Objetivo 2</h2>
+                <div class="video-container">
+                    <span>ESPACIO PARA VIDEO<br>Video de funcionamiento Objetivo 2</span>
+                </div>
+            </section>
+        </div>
 
+
+        <!-- =========================================================
+             BLOQUE 3: OBJETIVO 3
+        ========================================================= -->
+        <div class="bloque-objetivo">
+            <h2 class="titulo-bloque">Objetivo 3</h2>
+
+            <!-- OBJETIVO 3 -->
+            <section>
+                <h2>Objetivo</h2>
+                <div class="objetivo">
+                    Escribe aquí la descripción del tercer objetivo de la práctica.
+                </div>
+            </section>
+
+            <!-- MATERIALES 3 -->
+            <section>
+                <h2>Materiales</h2>
+                <div class="materiales">
+                    <div class="material">
+                        <strong>- Componente A</strong>
+                        <small>Descripción del componente.</small>
+                    </div>
+                    <div class="material">
+                        <strong>- Componente B</strong>
+                        <small>Descripción del componente.</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DESARROLLO 3 -->
+            <section>
+                <h2>Desarrollo</h2>
+
+                <div class="paso">
+                    <h3>
+                        <span class="paso-numero">1</span>
+                        Diseño y simulación en Tinkercad
+                    </h3>
+                    <p>Descripción del diseño en simulación para el Objetivo 3.</p>
+                    <div class="espacio-imagen">
+                        <span>ESPACIO PARA IMAGEN<br>Simulación Objetivo 3</span>
+                    </div>
+                    <p class="caption">Diseño del circuito en Tinkercad.</p>
                 </div>
 
-
-                <div class="material">
-
-                    <strong>
-                        - 2× Resistores temporizadores
-                    </strong>
-
-                    <small>
-                        RA = 1 kΩ<br>
-                        RB = 10 kΩ
-                    </small>
-
+                <div class="paso">
+                    <h3>
+                        <span class="paso-numero">2</span>
+                        Montaje del circuito en protoboard
+                    </h3>
+                    <p>Montaje físico de la tercera parte de la práctica.</p>
+                    <div class="espacio-imagen">
+                        <span>ESPACIO PARA IMAGEN<br>Circuito físico Objetivo 3</span>
+                    </div>
+                    <p class="caption">Montaje físico del Objetivo 3.</p>
                 </div>
 
+                <div class="paso">
+                    <h3>
+                        <span class="paso-numero">3</span>
+                        Mediciones
+                    </h3>
+                    <p>Resultados y comparación de mediciones para el Objetivo 3.</p>
 
-                <div class="material">
-
-                    <strong>
-                        - 1× Capacitor de temporización
-                    </strong>
-
-                    <small>
-                        C = 100 µF (electrolítico)
-                    </small>
-
+                    <h3>Tabla de mediciones</h3>
+                    <div class="tabla-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Magnitud</th>
+                                    <th>Teórico</th>
+                                    <th>Medido</th>
+                                    <th>% Error</th>
+                                    <th>¿Con qué lo mediste?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Magnitud 1</td><td></td><td></td><td></td><td></td></tr>
+                                <tr><td>Magnitud 2</td><td></td><td></td><td></td><td></td></tr>
+                                <tr><td>Magnitud 3</td><td></td><td></td><td></td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+            </section>
 
-
-                <div class="material">
-
-                    <strong>
-                        - 1× Capacitor adicional
-                    </strong>
-
-                    <small>
-                        C = 100 nF (cerámico)
-                    </small>
-
+            <!-- FALLAS 3 -->
+            <section class="fallas">
+                <h2>Fallas</h2>
+                <div class="espacio-texto">
+                    Escribe aquí las fallas encontradas durante la realización del Objetivo 3.
                 </div>
+            </section>
 
-
-                <div class="material">
-
-                    <strong>
-                        - 1× Capacitor de 10 nF
-                    </strong>
-
-                    <small>
-                        Para pin 5 (CTRL) → estabilidad.
-                    </small>
-
+            <!-- APRENDIZAJES 3 -->
+            <section class="aprendizajes">
+                <h2>Aprendizajes</h2>
+                <div class="espacio-texto">
+                    Escribe aquí los aprendizajes obtenidos en el Objetivo 3.
                 </div>
+            </section>
 
-
-                <div class="material">
-
-                    <strong>
-                        - Protoboard, cables y fuente
-                    </strong>
-
-                    <small>
-                        Fuente de alimentación de 5 V regulada.
-                    </small>
-
+            <!-- VIDEO 3 -->
+            <section>
+                <h2>Video del Objetivo 3</h2>
+                <div class="video-container">
+                    <span>ESPACIO PARA VIDEO<br>Video de funcionamiento Objetivo 3</span>
                 </div>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             DESARROLLO
-        ========================= -->
-
-        <section>
-
-            <h2>
-                 Desarrollo
-            </h2>
-
-
-            <!-- PASO 1 -->
-
-            <div class="paso">
-
-                <h3>
-
-                    <span class="paso-numero">
-                        1
-                    </span>
-
-                    Diseño y simulación en Tinkercad
-
-                </h3>
-
-                <p>
-
-                    Al inicio de la práctica realizamos el diseño
-                    del circuito utilizando Tinkercad. 
-                    Colocamos el temporizador NE555, los resistores,
-                    los capacitores y el LED de acuerdo con la
-                    imagen de referencia para construir el
-                    oscilador.
-
-                </p>
-
-                <p>
-
-                    Una vez terminado el diseño, realizamos una
-                    prueba en Tinkercad para comprobar que el circuito
-                    funcionara adecuadamente y que el LED pudiera
-                    parpadear.
-
-                </p>
-
-
-                <!-- ESPACIO PARA IMAGEN 1 -->
-
-                <div class="espacio-imagen">
-
-                    <span>
-                         ESPACIO PARA IMAGEN<br>
-                        Diseño y simulación del circuito en Tinkercad
-                    </span>
-
-                </div>
-
-                <p class="caption">
-                    Diseño del circuito y prueba realizada en Tinkercad.
-                </p>
-
-            </div>
-
-
-
-            <!-- PASO 2 -->
-
-            <div class="paso">
-
-                <h3>
-
-                    <span class="paso-numero">
-                        2
-                    </span>
-
-                    Montaje del circuito en protoboard
-
-                </h3>
-
-                <p>
-
-                    Después de comprobar que el diseño funcionaba
-                    correctamente en Tinkercad, pasamos el circuito
-                    a una protoboard.
-
-                </p>
-
-                <p>
-
-                    Realizamos las conexiones del NE555, los resistores,
-                    capacitores y el LED siguiendo lo que
-                    habíamos realizado en Tinkercad. Después
-                    conectamos la fuente de 5 V regulada y comprobamos
-                    que el LED parpadeara.
-
-                </p>
-
-                <p>
-
-                    De esta manera pudimos verificar que el
-                    circuito funcionara justo como se esperaba
-                    de acuerdo con la simulación en Tinkercad.
-
-                </p>
-
-
-                <!-- ESPACIO PARA IMAGEN 2 -->
-
-                <div class="espacio-imagen">
-
-                    <span>
-                         ESPACIO PARA IMAGEN<br>
-                        Circuito armado y funcionando en protoboard
-                    </span>
-
-                </div>
-
-                <p class="caption">
-                    Montaje físico del circuito en protoboard.
-                </p>
-
-            </div>
-
-
-
-            <!-- PASO 3 -->
-
-            <div class="paso">
-
-                <h3>
-
-                    <span class="paso-numero">
-                        3
-                    </span>
-
-                    Mediciones con el osciloscopio
-
-                </h3>
-
-                <p>
-
-                    Finalmente utilizamos el osciloscopio para realizar
-                    las mediciones del circuito. Medimos la magnitud
-                    del VCC, el voltaje de salida en estado ALTO,
-                    la frecuencia, el duty y la corriente del LED.
-
-                </p>
-
-                <p>
-
-                    Con los valores obtenidos
-                    pudimos comparar las mediciones con los valores
-                    teóricos calculados previamente.
-
-                </p>
-
-                <p>
-
-                    Las diferencias entre los valores teóricos y los
-                    valores medidos pueden explicarse por cosas como
-                    la tolerancia de los resistores y capacitores,
-                    las características del NE555,
-                    las condiciones de alimentación y las condiciones
-                    del circuito.
-
-                </p>
-
-
-                <h3>
-                    Tabla de mediciones
-                </h3>
-
-
-                <div class="tabla-container">
-
-                    <table>
-
-                        <thead>
-
-                            <tr>
-
-                                <th>
-                                    Magnitud
-                                </th>
-
-                                <th>
-                                    Teórico
-                                </th>
-
-                                <th>
-                                    Medido
-                                </th>
-
-                                <th>
-                                    % Error
-                                </th>
-
-                                <th>
-                                    ¿Con qué 
-                                    lo mediste?
-                                </th>
-
-                            </tr>
-
-                        </thead>
-
-
-                        <tbody>
-
-                            <tr>
-
-                                <td>
-                                    VCC (V)
-                                </td>
-
-                                <td></td>
-
-                                <td></td>
-
-                                <td></td>
-
-                                <td></td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    V de salida en ALTO (V)
-                                </td>
-
-                                <td></td>
-
-                                <td></td>
-
-                                <td></td>
-
-                                <td></td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    Frecuencia (Hz)
-                                </td>
-
-                                <td></td>
-
-                                <td></td>
-
-                                <td></td>
-
-                                <td></td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    Duty (%)
-                                </td>
-
-                                <td></td>
-
-                                <td></td>
-
-                                <td></td>
-
-                                <td></td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    I del LED (mA)
-                                </td>
-
-                                <td></td>
-
-                                <td></td>
-
-                                <td></td>
-
-                                <td></td>
-
-                            </tr>
-
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-
-                <p class="nota-tabla">
-
-                    * Completar con los valores calculados y medidos
-                    durante la práctica.
-
-                </p>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =========================
-             FALLAS
-        ========================= -->
-
-        <section class="fallas">
-
-            <h2>
-                 Fallas
-            </h2>
-
-            <div class="espacio-texto">
-
-                 Escribe aquí las fallas encontradas durante
-                la realización de la práctica.
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             APRENDIZAJES
-        ========================= -->
-
-        <section class="aprendizajes">
-
-            <h2>
-                 Aprendizajes
-            </h2>
-
-            <div class="espacio-texto">
-
-                 Escribe aquí los aprendizajes obtenidos
-                durante la práctica.
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             VIDEO
-        ========================= -->
-
-        <section>
-
-            <h2>
-                 Video de la práctica
-            </h2>
-
-            <p>
-
-                En este espacio puedes colocar un video mostrando
-                el funcionamiento del circuito.
-
-            </p>
-
-
-            <div class="video-container">
-
-                <span>
-                     ESPACIO PARA VIDEO<br><br>
-                    Coloca aquí tu video de la práctica.
-                </span>
-
-            </div>
-
-        </section>
-
+            </section>
+        </div>
 
     </main>
-
 
 
     <!-- =========================
@@ -972,18 +697,14 @@
     ========================= -->
 
     <footer>
-
         <p>
             Bitácora de Introducción a la Mecatrónica
-            · Práctica 1 · Temporizador 555
+            · Práctica 3 · Actuadores
         </p>
-
     </footer>
-
 
 </body>
 
 </html>
-```
 
 
