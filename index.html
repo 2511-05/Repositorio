@@ -383,9 +383,25 @@
                 min-height: 250px;
             }
         }
+    
+        .objetivo ul {
+            margin-left: 22px;
+        }
+
+        .objetivo li {
+            margin-bottom: 8px;
+        }
+
+        .video-container video {
+            width: 100%;
+            max-height: 600px;
+            border-radius: 10px;
+        }
+
     </style>
 
 </head>
+
 
 <body>
 
@@ -400,20 +416,20 @@
             </span>
 
             <h1>
-                Práctica 3
+                Sesión 3
             </h1>
 
             <p class="subtitle">
-                Actuadores
+                Motor DC, Puente H &amp; Servo
             </p>
 
             <div class="info">
                 <span>
-                    11/09/2026
+                    Sesión 3
                 </span>
 
                 <span>
-                    Diana Arellano Mendoza, Andrea Vera Fuentes
+                    Dirección, velocidad, prueba de carga y servo
                 </span>
 
                 <span class="status">
@@ -427,264 +443,380 @@
     <main>
 
         <!-- =========================================================
-             BLOQUE 1: OBJETIVO 1
+             OBJETIVOS
         ========================================================= -->
+
         <div class="bloque-objetivo">
-            <h2 class="titulo-bloque">Objetivo 1</h2>
+            <h2 class="titulo-bloque">Objetivos</h2>
 
-            <!-- OBJETIVO 1 -->
             <section>
-                <h2>Objetivo</h2>
+                <h2>Dirección y velocidad — Motor DC</h2>
+
                 <div class="objetivo">
-                    Construir un motor DC que logre girar en ambos sentidos
-                    controlado por in1/in2.
+                    <ul>
+                        <li>Lograr que el motor gire en ambos sentidos, controlado por in1/in2.</li>
+                        <li>Controlar la velocidad mediante PWM con un mínimo de 3 velocidades distintas.</li>
+                        <li>Identificar el PWM mínimo de arranque del motor.</li>
+                    </ul>
                 </div>
             </section>
 
-            <!-- MATERIALES 1 -->
             <section>
-                <h2>Materiales</h2>
-                <div class="materiales">
-                    <div class="material">
-                        <strong>- 1× ESP32 DevKit V1</strong>
-                    </div>
-                    <div class="material">
-                        <strong>- 1× Driver TB6612 (Puente H)</strong>
-                    </div>
-                    <div class="material">
-                        <strong>- 1-2× Motor DC TT con caja reductora</strong>
-                    </div>
-                    <div class="material">
-                        <strong>- Fuente de alimentación</strong>
-                    </div>
+                <h2>Prueba de carga</h2>
+
+                <div class="objetivo">
+                    <ul>
+                        <li>Medir la corriente en arranque y en giro libre utilizando el multímetro en serie.</li>
+                        <li>Comparar ambos valores y explicar cuál es mayor y por qué.</li>
+                    </ul>
                 </div>
             </section>
 
-            <!-- DESARROLLO 1 -->
             <section>
-                <h2>Desarrollo</h2>
+                <h2>Servo</h2>
 
-                <div class="paso">
-                    <h3>
-                        <span class="paso-numero">1</span>
-                        Diseño y simulación en Tinkercad
-                    </h3>
-                    <p>Diseño y prueba del circuito en Tinkercad para verificar el cambio de giro del motor DC.</p>
-                    <div class="espacio-imagen">
-                        <span>ESPACIO PARA IMAGEN<br>Simulación Objetivo 1</span>
-                    </div>
-                    <p class="caption">Diseño y simulación del circuito para Objetivo 1.</p>
-                </div>
-
-                <div class="paso">
-                    <h3>
-                        <span class="paso-numero">2</span>
-                        Mediciones
-                    </h3>
-                    <p>Medición de voltajes y corrientes del motor en ambos sentidos.</p>
-                </div>
-            </section>
-
-            <!-- FALLAS 1 -->
-            <section class="fallas">
-                <h2>Fallas</h2>
-                <div class="espacio-texto">
-                    Escribe aquí las fallas encontradas durante la realización del Objetivo 1.
-                </div>
-            </section>
-
-            <!-- APRENDIZAJES 1 -->
-            <section class="aprendizajes">
-                <h2>Aprendizajes</h2>
-                <div class="espacio-texto">
-                    Escribe aquí los aprendizajes obtenidos en el Objetivo 1.
-                </div>
-            </section>
-
-            <!-- VIDEO 1 -->
-            <section>
-                <h2>Video del Objetivo 1</h2>
-                <div class="video-container">
-                    <span>ESPACIO PARA VIDEO<br>Video de funcionamiento Objetivo 1</span>
+                <div class="objetivo">
+                    <ul>
+                        <li>Demostrar tres posiciones: 0°, 90° y 180°.</li>
+                        <li>Mostrar el cálculo del duty para cada posición.</li>
+                    </ul>
                 </div>
             </section>
         </div>
 
 
         <!-- =========================================================
-             BLOQUE 2: OBJETIVO 2
+             MATERIALES
         ========================================================= -->
+
         <div class="bloque-objetivo">
-            <h2 class="titulo-bloque">Objetivo 2</h2>
+            <h2 class="titulo-bloque">Materiales</h2>
 
-            <!-- OBJETIVO 2 -->
             <section>
-                <h2>Objetivo</h2>
-                <div class="objetivo">
-                    Construir un control de velocidad por PWM a el motor DC
-                    y lograr que tenga mínimo 3 velocidades distintas.
-                </div>
-                
-            <!-- DESARROLLO 2 -->
-            <section>
-                <h2>Desarrollo</h2>
-
-                <div class="paso">
-                    <h3>
-                        <span class="paso-numero">1</span>
-                        Diseño y simulación en Tinkercad
-                    </h3>
-                    <p>Realizamos cambios principalmente en el codigo ya que 
-                        los componentes que utilizamos para la segunda parte de
-                        la practica eran los mismos que en el objetivo 1.</p>
-                    <div class="espacio-imagen">
-                        <span>ESPACIO PARA IMAGEN<br>Simulación Objetivo 2</span>
+                <div class="materiales">
+                    <div class="material">
+                        <strong>1× ESP32 DevKit V1</strong>
                     </div>
-                    <p class="caption">Diseño del circuito en Tinkercad.</p>
-                </div>
 
-                <div class="paso">
-                    <h3>
-                        <span class="paso-numero">2</span>
-                        Mediciones
-                    </h3>
-                    <p>Resultados y comparación de mediciones para el Objetivo 2.</p>
-                </div>
-            </section>
+                    <div class="material">
+                        <strong>1× Driver TB6612 (puente H)</strong>
+                    </div>
 
-            <!-- FALLAS 2 -->
-            <section class="fallas">
-                <h2>Fallas</h2>
-                <div class="espacio-texto">
-                    Escribe aquí las fallas encontradas durante la realización del Objetivo 2.
-                </div>
-            </section>
+                    <div class="material">
+                        <strong>1–2× Motor DC TT con caja reductora</strong>
+                    </div>
 
-            <!-- APRENDIZAJES 2 -->
-            <section class="aprendizajes">
-                <h2>Aprendizajes</h2>
-                <div class="espacio-texto">
-                    Escribe aquí los aprendizajes obtenidos en el Objetivo 2.
-                </div>
-            </section>
+                    <div class="material">
+                        <strong>1× Servo SG90 (o similar)</strong>
+                    </div>
 
-            <!-- VIDEO 2 -->
-            <section>
-                <h2>Video del Objetivo 2</h2>
-                <div class="video-container">
-                    <span>ESPACIO PARA VIDEO<br>Video de funcionamiento Objetivo 2</span>
+                    <div class="material">
+                        <strong>1× Potenciómetro de 10 kΩ</strong>
+                    </div>
+
+                    <div class="material">
+                        <strong>Fuente/batería para motores</strong>
+                        <small>Separada del ESP32, con GND común.</small>
+                    </div>
+
+                    <div class="material">
+                        <strong>Multímetro</strong>
+                    </div>
+
+                    <div class="material">
+                        <strong>Protoboard y jumpers</strong>
+                    </div>
                 </div>
             </section>
         </div>
 
 
         <!-- =========================================================
-             BLOQUE 3: OBJETIVO 3
+             DESARROLLO
         ========================================================= -->
+
         <div class="bloque-objetivo">
-            <h2 class="titulo-bloque">Objetivo 3</h2>
+            <h2 class="titulo-bloque">Desarrollo</h2>
 
-            <!-- OBJETIVO 3 -->
             <section>
-                <h2>Objetivo</h2>
-                <div class="objetivo">
-                    Escribe aquí la descripción del tercer objetivo de la práctica.
+                <h2>1. Circuito y esquemático</h2>
+
+                <p>
+                    Se trabajó con un circuito para el control de motores DC mediante
+                    un puente H y se documentó su conexión mediante un esquemático.
+                </p>
+
+                <div class="espacio-imagen">
+                    <img
+                        src="https://andyy-py.github.io/Intro-Mecatronic-Chikis/Practicas/img_practica_3/circuito.png"
+                        alt="Circuito de control de motores DC, puente H y servomotor">
+                </div>
+
+                <p class="caption">
+                    Circuito de control de motores DC, puente H y servomotor.
+                </p>
+
+                <div class="espacio-imagen">
+                    <img
+                        src="https://andyy-py.github.io/Intro-Mecatronic-Chikis/Practicas/img_practica_3/esquematico.png"
+                        alt="Esquemático de motores DC y puente H">
+                </div>
+
+                <p class="caption">
+                    Esquemático de la conexión de los motores y el puente H.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>2. Programación de los motores</h2>
+
+                <p>
+                    El programa define los pines de control para los dos motores y
+                    utiliza los pines de habilitación mediante PWM. La secuencia
+                    mostrada realiza giro hacia adelante, una pausa y posteriormente
+                    giro en sentido contrario.
+                </p>
+
+                <div class="espacio-imagen">
+                    <img
+                        src="https://andyy-py.github.io/Intro-Mecatronic-Chikis/Practicas/img_practica_3/codigo_1.png"
+                        alt="Código implementado para los motores DC, parte 1">
+                </div>
+
+                <p class="caption">
+                    Código implementado para motores DC, puente H y servomotor — Parte 1.
+                </p>
+
+                <div class="espacio-imagen">
+                    <img
+                        src="https://andyy-py.github.io/Intro-Mecatronic-Chikis/Practicas/img_practica_3/codigo_2.png"
+                        alt="Código implementado para los motores DC, parte 2">
+                </div>
+
+                <p class="caption">
+                    Código implementado para motores DC, puente H y servomotor — Parte 2.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>3. Control de dirección</h2>
+
+                <p>
+                    La programación permite controlar la dirección de giro de los
+                    motores. Se establece una secuencia de avance, paro y reversa,
+                    utilizando las entradas del puente H para cambiar el sentido.
+                </p>
+
+                <div class="espacio-texto">
+                    <strong>Secuencia observada:</strong><br><br>
+                    • Giro hacia adelante de ambos motores.<br>
+                    • Paro temporal.<br>
+                    • Giro hacia atrás de ambos motores.<br>
+                    • Paro temporal y repetición de la secuencia.
                 </div>
             </section>
 
-            <!-- MATERIALES 3 -->
+
             <section>
-                <h2>Materiales</h2>
-                <div class="materiales">
-                    <div class="material">
-                        <strong>- Componente A</strong>
-                        <small>Descripción del componente.</small>
-                    </div>
-                    <div class="material">
-                        <strong>- Componente B</strong>
-                        <small>Descripción del componente.</small>
-                    </div>
+                <h2>4. Corriente de arranque y giro libre</h2>
+
+                <p>
+                    Se realizó una prueba de corriente para comparar el consumo del
+                    motor durante el arranque con el consumo durante el giro libre.
+                    De acuerdo con la información de la sesión, la corriente de
+                    arranque es mayor porque al inicio el motor se comporta casi como
+                    un cortocircuito y no existe todavía una fuerza electromotriz
+                    opuesta significativa.
+                </p>
+
+                <div class="espacio-imagen">
+                    <img
+                        src="https://andyy-py.github.io/Intro-Mecatronic-Chikis/Practicas/img_practica_3/corriente_giro_libre.png"
+                        alt="Medición de corriente en giro libre">
                 </div>
+
+                <p class="caption">
+                    Ejemplo documentado de la medición de corriente durante el giro libre.
+                </p>
+
+                <div class="espacio-imagen">
+                    <span>
+                        ESPACIO PARA TU IMAGEN<br>
+                        Medición de corriente de arranque
+                    </span>
+                </div>
+
+                <p class="caption">
+                    Coloca aquí la fotografía de la medición de corriente de arranque.
+                </p>
             </section>
 
-            <!-- DESARROLLO 3 -->
+
             <section>
-                <h2>Desarrollo</h2>
+                <h2>5. Control del servo y cálculo del Duty</h2>
 
-                <div class="paso">
-                    <h3>
-                        <span class="paso-numero">1</span>
-                        Diseño y simulación en Tinkercad
-                    </h3>
-                    <p>Descripción del diseño en simulación para el Objetivo 3.</p>
-                    <div class="espacio-imagen">
-                        <span>ESPACIO PARA IMAGEN<br>Simulación Objetivo 3</span>
-                    </div>
-                    <p class="caption">Diseño del circuito en Tinkercad.</p>
+                <p>
+                    Se plantearon tres posiciones del servomotor: 0°, 90° y 180°.
+                    Los cálculos de duty mostrados en la sesión son los siguientes:
+                </p>
+
+                <div class="espacio-imagen">
+                    <img
+                        src="https://andyy-py.github.io/Intro-Mecatronic-Chikis/Practicas/img_practica_3/duty.png"
+                        alt="Cálculos del Duty para el servomotor">
                 </div>
 
-                <div class="paso">
-                    <h3>
-                        <span class="paso-numero">2</span>
-                        Montaje del circuito en protoboard
-                    </h3>
-                    <p>Montaje físico de la tercera parte de la práctica.</p>
-                    <div class="espacio-imagen">
-                        <span>ESPACIO PARA IMAGEN<br>Circuito físico Objetivo 3</span>
-                    </div>
-                    <p class="caption">Montaje físico del Objetivo 3.</p>
-                </div>
+                <p class="caption">
+                    Cálculos del Duty para las posiciones del servomotor.
+                </p>
 
-                <div class="paso">
-                    <h3>
-                        <span class="paso-numero">3</span>
-                        Mediciones
-                    </h3>
-                    <p>Resultados y comparación de mediciones para el Objetivo 3.</p>
-
-                    <h3>Tabla de mediciones</h3>
-                    <div class="tabla-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Magnitud</th>
-                                    <th>Teórico</th>
-                                    <th>Medido</th>
-                                    <th>% Error</th>
-                                    <th>¿Con qué lo mediste?</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>Magnitud 1</td><td></td><td></td><td></td><td></td></tr>
-                                <tr><td>Magnitud 2</td><td></td><td></td><td></td><td></td></tr>
-                                <tr><td>Magnitud 3</td><td></td><td></td><td></td><td></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="tabla-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Tiempo de pulso</th>
+                                <th>Cálculo</th>
+                                <th>Duty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0°</td>
+                                <td>1.0 ms</td>
+                                <td>(1.0 / 20) × 100</td>
+                                <td>5%</td>
+                            </tr>
+                            <tr>
+                                <td>90°</td>
+                                <td>1.5 ms</td>
+                                <td>(1.5 / 20) × 100</td>
+                                <td>7.5%</td>
+                            </tr>
+                            <tr>
+                                <td>180°</td>
+                                <td>2.0 ms</td>
+                                <td>(2.0 / 20) × 100</td>
+                                <td>10%</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
+        </div>
 
-            <!-- FALLAS 3 -->
+
+        <!-- =========================================================
+             FALLAS
+        ========================================================= -->
+
+        <div class="bloque-objetivo">
+            <h2 class="titulo-bloque">Fallas</h2>
+
             <section class="fallas">
-                <h2>Fallas</h2>
-                <div class="espacio-texto">
-                    Escribe aquí las fallas encontradas durante la realización del Objetivo 3.
-                </div>
-            </section>
+                <h2>Problema encontrado</h2>
 
-            <!-- APRENDIZAJES 3 -->
+                <p>
+                    Al iniciar la simulación en Tinkercad, ninguno de los dos motores
+                    DC presentaba movimiento, a pesar de que el código parecía estar
+                    ejecutando las funciones de movimiento.
+                </p>
+
+                <h3>Cómo se encontró</h3>
+
+                <p>
+                    Con apoyo de herramientas de inteligencia artificial para auditar
+                    la estructura del programa y la lógica de conexiones, se
+                    identificó un problema relacionado con la declaración de las
+                    variables de habilitación (<em>enable1</em> y <em>enable2</em>).
+                </p>
+
+                <h3>Solución</h3>
+
+                <p>
+                    Se corrigió el código declarando las variables de habilitación en
+                    pines PWM del Arduino. Después de cargar el código corregido y
+                    ejecutar nuevamente la simulación, los motores respondieron y
+                    realizaron la secuencia de avance, paro y reversa.
+                </p>
+            </section>
+        </div>
+
+
+        <!-- =========================================================
+             APRENDIZAJES
+        ========================================================= -->
+
+        <div class="bloque-objetivo">
+            <h2 class="titulo-bloque">Aprendizajes</h2>
+
             <section class="aprendizajes">
-                <h2>Aprendizajes</h2>
-                <div class="espacio-texto">
-                    Escribe aquí los aprendizajes obtenidos en el Objetivo 3.
-                </div>
-            </section>
+                <h2>¿Qué se aprendió?</h2>
 
-            <!-- VIDEO 3 -->
+                <p>
+                    Se aprendió que el puente H funciona como un intermediario entre
+                    el Arduino y los motores, permitiendo controlar la dirección en
+                    la que giran, ya sea hacia adelante o hacia atrás, además de
+                    permitir detenerlos de forma controlada.
+                </p>
+
+                <p>
+                    También se trabajó con el control de velocidad mediante PWM, la
+                    medición de corriente durante diferentes condiciones de operación
+                    y el cálculo del duty necesario para controlar distintas
+                    posiciones de un servomotor.
+                </p>
+
+                <p>
+                    Finalmente, la práctica permitió identificar la importancia de
+                    revisar tanto el código como las conexiones cuando un circuito no
+                    responde como se espera.
+                </p>
+            </section>
+        </div>
+
+
+        <!-- =========================================================
+             DEMOSTRACIÓN EN VIDEO
+        ========================================================= -->
+
+        <div class="bloque-objetivo">
+            <h2 class="titulo-bloque">Demostración en video</h2>
+
             <section>
-                <h2>Video del Objetivo 3</h2>
+                <h2>Funcionamiento</h2>
+
                 <div class="video-container">
-                    <span>ESPACIO PARA VIDEO<br>Video de funcionamiento Objetivo 3</span>
+                    <video controls>
+                        <source
+                            src="https://andyy-py.github.io/Intro-Mecatronic-Chikis/Practicas/img_practica_3/funcion.mp4"
+                            type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                </div>
+
+                <p class="caption">
+                    Demostración del funcionamiento de los motores.
+                </p>
+            </section>
+        </div>
+
+
+        <!-- =========================================================
+             SIGUIENTE PASO
+        ========================================================= -->
+
+        <div class="bloque-objetivo">
+            <h2 class="titulo-bloque">Siguiente paso</h2>
+
+            <section>
+                <div class="objetivo">
+                    Para dominar el control exacto de velocidad y dirección, el
+                    siguiente paso es comprender las variables PWM para controlar la
+                    velocidad y las funciones personalizadas para dar instrucciones
+                    claras al motor.
                 </div>
             </section>
         </div>
@@ -698,13 +830,11 @@
 
     <footer>
         <p>
-            Bitácora de Introducción a la Mecatrónica
-            · Práctica 3 · Actuadores
+            Bitácora de Introducción a la Mecatrónica · Sesión 3 · Motor DC, Puente H &amp; Servo
         </p>
     </footer>
 
 </body>
-
 </html>
 
 
